@@ -31,9 +31,15 @@ int main(int argc, char** argv) {
     push(stack,1723);
     push(stack,-657);
 
+    //ret_pop = pop(stack);
     ret_pop = pop(stack);
-    ret_pop = pop(stack);
-    ret_pop = pop(stack);
+    //ret_pop = pop(stack);
+
+    swap(stack);
+
+    dup(stack);
+
+   
 
     printf("ret_pop: %.0f\n",ret_pop);
 

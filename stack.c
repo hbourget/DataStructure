@@ -61,30 +61,28 @@ float pop(Stack *s){
  * @return Revois la première valeur de la pile
  */
 bool is_stack_empty(Stack *s){
-    if(!s->index){
-        printf("empty\n");
+    if(!s->index)
         return true;
-    }
-    printf("not empty\n");
     return false;
 }
 
 float peek(Stack *s){
     //Lire la première valeur du tableau sans la sortire
-    return s->data[s->index];
+    return s->data[s->index-1];
 }
 
 void dup(Stack *s){
     //Dupliquer la première valeur du stack
-    
+    float value = s->data[s->index-1];
+    s->data[s->index] = value;
+    s->index++;
 }
 
 void swap(Stack *s){
     //Echanger les deux premères valeurs du stack
-    float temp;
-    temp = s->data[0];
-    s->data[0] = s->data[1];
-    s->data[1] = s->data[0];
+    float temp = s->data[s->index-1];
+    s->data[s->index-1] = s->data[s->index-2];
+    s->data[s->index-2] = temp;
 
 }
 void stack_clear(Stack *s){
