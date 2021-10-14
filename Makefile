@@ -86,6 +86,10 @@ clean:
 	$(RM) $(call FIXPATH,$(OBJECTS))
 	@echo Cleanup complete!
 
+.PHONY: documentation
+documentation:
+	doxygen Doxyfile
+
 run: all
 	./$(OUTPUTMAIN)
 	@echo Executing 'run: all' complete!
