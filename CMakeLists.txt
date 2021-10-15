@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 project(DataStructure C)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD 99)
 
 include_directories(.)
 
@@ -11,7 +11,4 @@ add_executable(DataStructure
         sources/heap.c
         headers/heap.h
         sources/main.c
-        sources/queue.c
-        headers/queue.h
-        sources/stack.c
-        headers/stack.h)
+        tests/asserts.c tests/asserts.h)

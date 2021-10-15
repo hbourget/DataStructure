@@ -7,42 +7,14 @@
 /* 
  * File:   main.c
  * Author: aurelio
- *
  */
 
 #include <stdio.h>
-#include <assert.h>
-
-#include "headers/stack.h"
-#include "headers/array_list.h"
-#include "headers/heap.h"
-
-void test_arraylist()
-{
-    Array_list l;
-    int position = 35;
-    float valeur = 150;
-
-    init_array_list(&l);
-    assert(l.index == 0);
-
-    for(int i = 0; i < 50; i++)
-    {
-        add(&l, i);
-    }
-
-    assert(l.index == 50);
-    assert(get_at(&l, position) == position);
-    insert_at(&l, position, valeur);
-    assert(get_at(&l, position) == valeur);
-    remove_at(&l, position);
-    assert(get_at(&l, position) != valeur);
-    clear_arraylist(&l);
-    assert(l.index == 0);
-}
+#include "tests/asserts.h"
 
 int main(int argc, char** argv)
 {
     test_arraylist();
-    printf("Les tests ont réussis");
+    test_heap();
+    printf("Les tests ont reussis");
 }

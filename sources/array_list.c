@@ -10,6 +10,7 @@ void init_array_list(Array_list *l)
 {
     l->index = 0;
 }
+
 void insert_at(Array_list *l, int position, float value)
 {
     if(position > l->index)
@@ -27,11 +28,13 @@ void insert_at(Array_list *l, int position, float value)
         l->index = l->index+1;
     }
 }
+
 void add(Array_list *l, float value)
 {
     l->data[l->index] = value;
     l->index = l->index + 1;
 }
+
 float remove_at(Array_list *l, int position)
 {
     float ret = l->data[position];
@@ -43,12 +46,14 @@ float remove_at(Array_list *l, int position)
     l->index = l->index -1;
     return ret;
 }
+
 float get_at(Array_list *l,int position)
 {
     float ret;
     ret = l->data[position];
     return ret;
 }
+
 void clear_arraylist(Array_list *l)
 {
     for (int i = 0; i < l->index; ++i)

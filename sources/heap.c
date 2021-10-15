@@ -46,7 +46,6 @@ float peek_heap(Heap *h)
 }
 
 // return root value but dont remove it
-
 void clear_heap(Heap *h)
 {
     for (int i = 0; i < h->index; ++i)
