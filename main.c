@@ -15,35 +15,41 @@
 #include <errno.h>
 #include <string.h>
 #include <assert.h>
+#include <CUnit/CUnit.h>
 
 #include "stack.h"
 #include "queue.h"
 
-void ass_stack(){
+void ass_stack(void){
 
     Stack *stack;
     stack = malloc(sizeof(Stack));
 
     init_stack(stack);
-    assert(stack->index ==0);
-    assert(is_stack_empty(stack)==1);
+    CU_ASSERT(stack->index ==0);
+    CU_ASSERT(is_stack_empty(stack)==1);
 
     push(stack,7);
-    assert(peek(stack) == 6);
+    CU_ASSERT(peek(stack) == 7);
     push(stack,1723);
-    assert(peek(stack) == 1723);
+    CU_ASSERT(peek(stack) == 1723);
     push(stack,-657);
-    assert(peek(stack) == -657);
-    assert(stack->index == 3);
+    CU_ASSERT(peek(stack) == -657);
+    CU_ASSERT(stack->index == 3);
 
-    assert(pop(stack) == -657);
+    CU_ASSERT(pop(stack) == -657);    
 
     swap(stack);
-    assert(peek(stack) == 7);
-    assert(pop(stack) == 7);
-    assert(is_stack_empty(stack) == 0);
-    assert(pop(stack) == 1723);
-    assert(is_stack_empty(stack) == 1);
+    CU_ASSERT(peek(stack) == 7);
+
+    dup(stack);
+    CU_ASSERT(pop(stack) == 7);
+    CU_ASSERT(pop(stack) == 7);
+    CU_ASSERT(is_stack_empty(stack) == 0);
+    CU_ASSERT(pop(stack) == 1723);
+    CU_ASSERT(is_stack_empty(stack) == 1);
+
+    free(stack);
     
 }
 
@@ -52,38 +58,40 @@ void ass_queue(){
     queue = malloc(sizeof(Queue));
 
     init_queue(queue);
-    assert(queue->index == 0);
+    CU_ASSERT(queue->index == 0);
 
     enqueue(queue, 27);
-    assert(front(queue)==27);
+    CU_ASSERT(front(queue)==27);
     enqueue(queue, 157);
-    assert(front(queue)==27);
+    CU_ASSERT(front(queue)==27);
     enqueue(queue, 9999);
-    assert(is_queue_empty(queue)==0);
+    CU_ASSERT(is_queue_empty(queue)==0);
 
-    assert(dequeue(queue)==27);
-    assert(dequeue(queue)==157);
-    assert(dequeue(queue)==9999);
-    assert(is_queue_empty(queue)==1);
+    CU_ASSERT(dequeue(queue)==27);
+    CU_ASSERT(dequeue(queue)==157);
+    CU_ASSERT(dequeue(queue)==9999);
+    CU_ASSERT(is_queue_empty(queue)==1);
+    
+    free(queue);
 
+}
+
+int test_cleanup(void){
+    return 0;
+}
+
+int test_init(void){
+    return 0;
 }
 
 int main() {
 
-    printf("====================STACK DEBUT====================\n");
-    
-    ass_stack();
+    CU_initialize_registry();
+    CU_pSuite *Suite = CU_add_suite("test", test_init, test_cleanup);
+    CU_add_test(Suite, "test stack", ass_stack);
+    CU_add_test(Suite, "test queue", ass_queue);
+    CU_basic_run_tests();
 
-    printf("Test Stack réussi\n");
-
-    printf("====================STACK FIN====================\n");
-
-    printf("====================QUEUE DEBUT====================\n");
-
-   ass_queue();
-   printf("Test Queueu réussi\n");
-
-    printf("====================QUEUE FIN====================\n");
 
     return (EXIT_SUCCESS);
 }
