@@ -1,15 +1,15 @@
 #include "queue.h"
 
-void init_queue(Queue *s){  //initialisation de la queue
+void init_queue(Queue *s){ 
     s->index = 0;
 }
 
-void enqueue(Queue *q, float value){    //ajout d'un élément a la queue
+void enqueue(Queue *q, float value){
     q->data[q->index] = value;
     q->index++;
-
 }
-float dequeue(Queue *q){    //sortie d'un élément de la queu
+
+float dequeue(Queue *q){
     float value = q->data[0];
     int count = q->index - 2;
 
@@ -22,16 +22,16 @@ float dequeue(Queue *q){    //sortie d'un élément de la queu
     return value;
 }
 
-bool is_queue_empty(Queue *q){  //Queue est vide ?
+bool is_queue_empty(Queue *q){
     if(!q->index)
         return true;
     return false;
 }
 
-float front(Queue *q){  //première élément de la queue ? 
+float front(Queue *q){
     return q->data[0];
 }
 
-void clear(Queue *q){ //vider la queue
+void clear(Queue *q){
     q->index = 0;
 }
