@@ -19,7 +19,6 @@ void test_arraylist(void)
     float valeur = 150;
 
     init_array_list(l);
-    assert(l->index == 0);
     CU_ASSERT(l->index == 0);
 
     for(int i = 0; i < 50; i++)
@@ -27,17 +26,17 @@ void test_arraylist(void)
         add(l, i);
     }
 
-    assert(l->index == 50);
-    assert(get_at(l, position) == position);
+    CU_ASSERT(l->index == 50);
+    CU_ASSERT(get_at(l, position) == position);
 
     insert_at(l, position, valeur);
-    assert(get_at(l, position) == valeur);
+    CU_ASSERT(get_at(l, position) == valeur);
 
     remove_at(l, position);
-    assert(get_at(l, position) != valeur);
+    CU_ASSERT(get_at(l, position) != valeur);
 
     clear_arraylist(l);
-    assert(l->index == 0);
+    CU_ASSERT(l->index == 0);
 }
 
 void test_heap()
@@ -45,11 +44,11 @@ void test_heap()
     Heap *h = malloc(sizeof(Heap));
 
     init_heap(h);
-    assert(is_heap_empty(h) == true);
+    CU_ASSERT(is_heap_empty(h) == true);
 
     h->data[0] = 1;
-    assert(peek_heap(h) == 1);
+    CU_ASSERT(peek_heap(h) == 1);
 
     clear_heap(h);
-    assert(h->index == 0);
+    CU_ASSERT(h->index == 0);
 }
