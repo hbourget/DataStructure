@@ -19,75 +19,69 @@
 #include "stack.h"
 #include "queue.h"
 
+void ass_stack(){
+
+    Stack *stack;
+    stack = malloc(sizeof(Stack));
+
+    init_stack(stack);
+    assert(stack->index ==0);
+    assert(is_stack_empty(stack)==1);
+
+    push(stack,7);
+    assert(peek(stack) == 6);
+    push(stack,1723);
+    assert(peek(stack) == 1723);
+    push(stack,-657);
+    assert(peek(stack) == -657);
+    assert(stack->index == 3);
+
+    assert(pop(stack) == -657);
+
+    swap(stack);
+    assert(peek(stack) == 7);
+    assert(pop(stack) == 7);
+    assert(is_stack_empty(stack) == 0);
+    assert(pop(stack) == 1723);
+    assert(is_stack_empty(stack) == 1);
+    
+}
+
+void ass_queue(){
+    Queue *queue;       
+    queue = malloc(sizeof(Queue));
+
+    init_queue(queue);
+    assert(queue->index == 0);
+
+    enqueue(queue, 27);
+    assert(front(queue)==27);
+    enqueue(queue, 157);
+    assert(front(queue)==27);
+    enqueue(queue, 9999);
+    assert(is_queue_empty(queue)==0);
+
+    assert(dequeue(queue)==27);
+    assert(dequeue(queue)==157);
+    assert(dequeue(queue)==9999);
+    assert(is_queue_empty(queue)==1);
+
+}
 
 int main() {
 
-    Queue *queue;
-    Stack *stack;
-    float ret_pop;
-
-    stack = malloc(sizeof(Stack));
-    queue = malloc(sizeof(queue));
-
     printf("====================STACK DEBUT====================\n");
     
+    ass_stack();
 
-    init_stack(stack);
-
-    push(stack,7);
-    push(stack,1723);
-    printf("Peek 1723: %.0f\n",peek(stack));
-    push(stack,-657);
-    printf("Peek -657: %.0f\n",peek(stack));
-    
-    ret_pop = pop(stack);
-    printf("ret_pop: %.0f\n",ret_pop);
-
-    swap(stack);
-    printf("Peek 7: %.0f\n",peek(stack));
-
-    dup(stack);
-   
-    printf("stack stat: %d\n",is_stack_empty(stack));
-    printf("popping: %.0f\n",pop(stack));
-    printf("popping: %.0f\n",pop(stack));
-    printf("popping: %.0f\n",pop(stack));
-    printf("stack stat: %d\n",is_stack_empty(stack));
-
-    printf("restacking...\n");
-
-    push(stack, 1111);
-    push(stack, 69420);
-    push(stack, 3.1415);
-    printf("stack stat: %d\n",is_stack_empty(stack));
-    printf("reseting...\n");
-    stack_clear(stack);
-    printf("stack stat: %d\n",is_stack_empty(stack));
+    printf("Test Stack réussi\n");
 
     printf("====================STACK FIN====================\n");
 
-
     printf("====================QUEUE DEBUT====================\n");
 
-    enqueue(queue, 27);
-    enqueue(queue, 157);
-    enqueue(queue, 9999);
-    enqueue(queue, -3612);
-    enqueue(queue, 90);
-    
-    printf("Dequeue: %.0f\n",dequeue(queue));
-    printf("Dequeue: %.0f\n",dequeue(queue));
-    printf("Dequeue: %.0f\n",dequeue(queue));
-    
-    printf("Queue empty : %d\n",is_queue_empty(queue));    
-
-
-    printf("Front: %.0f\n", front(queue));
-
-    printf("Dequeue: %.0f\n",dequeue(queue));
-    printf("Dequeue: %.0f\n",dequeue(queue));
-
-    printf("Queue empty : %d\n",is_queue_empty(queue));
+   ass_queue();
+   printf("Test Queueu réussi\n");
 
     printf("====================QUEUE FIN====================\n");
 
