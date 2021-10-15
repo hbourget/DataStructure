@@ -8,6 +8,8 @@
 
 #include "headers/array_list.h"
 #include "headers/heap.h"
+#include <CUnit/CUnit.h>
+
 
 void test_arraylist(void)
 {
@@ -18,6 +20,7 @@ void test_arraylist(void)
 
     init_array_list(l);
     assert(l->index == 0);
+    CU_ASSERT(l->index == 0);
 
     for(int i = 0; i < 50; i++)
     {
