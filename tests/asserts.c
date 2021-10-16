@@ -46,7 +46,6 @@ void test_heap()
     CU_ASSERT(h->index == 0);
 }
 
-
 void ass_stack(void){
 
     Stack *stack;
