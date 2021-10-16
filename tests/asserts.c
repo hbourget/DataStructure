@@ -2,14 +2,12 @@
 // Created by h.bourget on 15/10/2021.
 //
 
-#include <assert.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
 #include "headers/array_list.h"
 #include "headers/heap.h"
 #include <CUnit/CUnit.h>
-
 
 void test_arraylist(void)
 {
