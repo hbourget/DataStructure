@@ -1,4 +1,4 @@
-#include "headers/array_list.h"
+#include "../headers/array_list.h"
 
 /*
  * To change this license header, choose License Headers in Project Properties.

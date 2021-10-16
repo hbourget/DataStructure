@@ -9,10 +9,7 @@
  * Author: aurelio
  */
 
-#include <stdio.h>
-#include "tests/asserts.h"
-#include <CUnit/CUnit.h>
-
+#include "../tests/asserts.h"
 
 int main(int argc, char** argv)
 {

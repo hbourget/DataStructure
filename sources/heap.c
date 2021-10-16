@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 #include <stdbool.h>
-#include "headers/heap.h"
+#include "../headers/heap.h"
 
 void init_heap(Heap *h)
 {
