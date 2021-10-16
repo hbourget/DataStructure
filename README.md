@@ -22,35 +22,35 @@
 Une pile (aussi appelé _stack_) fonctionne sur le principe du **LIFO** (Last In First Out).
 C'est à dire que la dernière valeur qui est entrées dans la pile sera la première à en sortir.
 - Opérations fondamentales : 
-→ push : empilement de données 
-→ pop : récupération des données 
+	- push : empilement de données 
+	- pop : récupération des données 
 
-- Opération secondaire : 
-→ is_empty : état de la pile 
-→ size : nombre de données sur la pile 
-→ peek : récupération de données sans désempiler 
-→ dup : duplique le sommet de la pile 
-→ swap : échange les deux éléments au sommet
+- Opérations secondaires : 
+	- is_empty : état de la pile 
+	- size : nombre de données sur la pile 
+	- peek : récupération de données sans désempiler 
+	- dup : duplique le sommet de la pile 
+	- swap : échange les deux éléments au sommet
 
 ### La file
 Les files (Queue, **FIFO**) Structure de données basée sur le principe du « Premier entré, premier sorti » (ou **FIFO** pour First In, First Out) 
 - Opérations fondamentales : 
-→ enqueue: ajout de données 
-→ dequeue : récupération des données 
+	-  enqueue: ajout de données 
+    - dequeue : récupération des données 
 
-- Opération secondaire : 
-→ is_empty : état de la pile 
-→ size : nombre de données sur la pile 
-→ peek : récupération de données sans désempiler
+- Opérations secondaires : 
+	- is_empty : état de la pile 
+	- size : nombre de données sur la pile 
+	- peek : récupération de données sans désempiler
 
 ### La liste
 Une liste est un conteneur d'éléments, où chaque élément contient la donnée, ainsi que d'autres informations permettant la récupération des données au sein de la liste. La nature (les types) de ces informations caractérise un type différent de liste. 
 
 On peut distinguer, de manière générale, deux types de liste : 
 
-→ **Listes contiguës** : la liste est représentée par un tableau. Ce n’est pas toujours une bonne solution en pratique, mais nous allons le faire ici, dans l’objectif d’illustrer la dissociation entre un type abstrait et son implémentation. 
+- **Listes contiguës** : la liste est représentée par un tableau. Ce n’est pas toujours une bonne solution en pratique, mais nous allons le faire ici, dans l’objectif d’illustrer la dissociation entre un type abstrait et son implémentation. 
 
-→ **Listes chaînées** : les différents éléments de la liste sont créés au fur et à mesure des besoins (implémentation dynamique)
+- **Listes chaînées** : les différents éléments de la liste sont créés au fur et à mesure des besoins (implémentation dynamique)
 
 ### Le tas
 Le tas est une structure de données de type arbre qui permet de retrouver directement l'élément que l'on veut traiter en priorité.
