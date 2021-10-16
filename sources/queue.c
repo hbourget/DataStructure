@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "../headers/queue.h"
 
 void init_queue(Queue *s){ 
     s->index = 0;

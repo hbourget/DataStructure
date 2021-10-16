@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "../headers/stack.h"
 
 void init_stack(Stack *s){
     s->index = 0;
