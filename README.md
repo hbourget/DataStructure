@@ -72,7 +72,7 @@ Il est possible de générer la documentation technique de ce projet avec [Doxyg
 * **Linux**
   * Installation de Doxygen 
     * ``apt-get install doxygen``
-  * Génération de la documentation depuis la racine d'installation de Benchme
+  * Génération de la documentation depuis la racine d'installation de DataStructure
     * ``make documentation``
 
 La documentation est généré sous format HTML. Pour la lire, il suffit d'ouvrir le fichier ``index.html`` situer dans le dossier **doc** qui vient d'être créé par Doxygen.
